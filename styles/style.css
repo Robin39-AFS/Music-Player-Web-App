@@ -7,18 +7,20 @@
 }
 
 body{
-    background-color: black;
+
     color: white;
 }
 .left{
     width: 25vw;
     padding: 10px;
+    background-color: black;
 }
 
 .right{
     position: relative;
     width: 70vw;
     margin: 15px 0;
+    background-color: black;
 } 
 
 
@@ -58,10 +60,11 @@ body{
     position: absolute;
     bottom: 0;
     padding: 10px 0;
+    flex-wrap: wrap;
 }
 
 .footer a{
-    color: grey;
+    color: gray;
     
 }
 
@@ -174,12 +177,13 @@ body{
     bottom: 30px;
     background-color: #2A2A2A;
     filter: invert(-1);
-    padding: 18px;
+    padding: 1% 1.5%;
     width:  calc(100vw - 33vw);
     height: 60px;
     border-radius: 25px;
     min-height: 45px;
     font-size: 18px;
+    margin: 0 1px;
 }
 
 .songbuttons{
@@ -219,7 +223,13 @@ body{
     display: flex;
     justify-content: center;
     align-items: center;
+    opacity: 0;
 }
+.songlist li:hover .playnow{
+    opacity: 1;
+    transition: all .3s ease-in-out;
+}
+
 .playnow > img{
     width: 20px;
 }
@@ -267,6 +277,15 @@ body{
 .hamburger, .close{
     display: none;
 }
+
+.timevol{
+    display: flex;
+    gap: 5px;
+
+}
+.songtime{
+    padding: 0 12px;
+}
 @media (max-width: 970px) {
     .left{
         position: absolute;
@@ -287,9 +306,10 @@ body{
         top: 2em;
     }
     .playBar{
-        width: calc(100vw - 35px);
+        width: calc(100vw - 3.4%);
         min-height: 140px;
         font-size: 18px;
+        bottom: 0px;
     }
     .hamburger{
         display: block;
@@ -312,9 +332,13 @@ body{
         justify-content: center;
         align-items: center;
     }
-    .songinfo{
+    .songinfo, .songtime, .songbuttons{
         text-align: center;
         max-width: 100% ;
         min-width: 100%;
     }
+    .timevol{
+        align-items: center;
+    }
+
 }

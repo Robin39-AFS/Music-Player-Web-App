@@ -18,7 +18,7 @@ function secondsToMinutesSeconds(seconds){
 }
 
 async function getSongs() {
-  let a = await fetch("http://127.0.0.1:5500/songs/");
+  let a = await fetch("songs/");
   let response = await a.text();
   // console.log(response);
   let div = document.createElement("div");
@@ -65,7 +65,7 @@ async function main() {
       `<li>
         <img class="invert" src="/logos/music.svg" alt="">
         <div class="info">
-            <div>${song.replaceAll("%20", " ")}</div>
+            <div>${song.replaceAll("%20", " ") || song.replaceAll("%26", " ")}</div>
             <div>Robin</div>
             </div>
                 <div class="playnow">
